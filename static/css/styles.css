@@ -2,7 +2,9 @@
   position: relative;
   margin-bottom: 100px;
 }
-body{  
+body{ 
+  width: 100%;
+  height: 100%; 
   position: relative;
 }
 
@@ -166,4 +168,13 @@ header{
   top: 105%;
   left: 50%;
   transform: translate(-50%, -50%); 
+}
+.delete{
+  max-width: fit-content;
+  text-align: center;
+  height: fit-content;
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
