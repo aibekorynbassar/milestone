@@ -44,6 +44,7 @@ def insertpatient(request):
 def showemp(request):
     showall = EmpModel.objects.all()
     showallpatients = Patient.objects.all()
+    showallappointments = Appointment.objects.all()
 
     paginator = Paginator(showall, 2)
 
@@ -54,8 +55,12 @@ def showemp(request):
 
     page_number1 = request.GET.get('page1')
     patdata = paginator1.get_page(page_number1)
-    return render(request,'index.html',{"data":data, "patdata":patdata})
 
+    paginator2 = Paginator(showallappointments, 2)
+
+    page_number2 = request.GET.get('page2')
+    appdata = paginator2.get_page(page_number2)
+    return render(request,'index.html',{"data":data, "patdata":patdata, "appdata":appdata})
 
 
 def insertemp(request):
