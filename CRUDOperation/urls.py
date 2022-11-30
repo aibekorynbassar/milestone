@@ -33,8 +33,11 @@ urlpatterns = [
     path('UpdatePatient/<int:id>',views.updatepatient, name="updatepatient"),
     path('something/edit/<int:id>', views.editemp,name="editemp"),
     path('Update/<int:id>',views.updateemp, name="updateemp"),
+
     path('something/DeletePatient/<int:id>', views.delpatient, name="delpatient"),
     path('something/Delete/<int:id>', views.delemp, name="delemp"),
+    path('something/DeleteAppointment/<int:id>', views.delappoint, name="delappoint"),
+
     path('showspecialization/',views.showspecialization,name="showspecialization"),
     path('showspecialization/doctortableSpec/<int:id>', views.doctortableSpec, name = "doctortableSpec"),
     path('searchbar/', views.searchbar, name="searchbar"),

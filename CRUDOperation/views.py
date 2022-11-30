@@ -56,7 +56,7 @@ def showemp(request):
     page_number1 = request.GET.get('page1')
     patdata = paginator1.get_page(page_number1)
 
-    paginator2 = Paginator(showallappointments, 2)
+    paginator2 = Paginator(showallappointments, 3)
 
     page_number2 = request.GET.get('page2')
     appdata = paginator2.get_page(page_number2)
@@ -112,6 +112,12 @@ def delpatient(request,id):
     delemployee.delete()
     showdata = Patient.objects.all()
     return render(request, "deletepatients.html", {"data":showdata})
+
+def delappoint(request,id):
+    delemployee = Appointment.objects.get(id=id)
+    delemployee.delete()
+    showdata = Appointment.objects.all()
+    return render(request, "deleteappointment.html", {"data":showdata})    
 
 def doctortableSpec(request,id):
     showdoctors = EmpModel.objects.all().filter(specializationid=id)

@@ -56,7 +56,7 @@ CREATE TABLE patient (
 
 DROP TABLE IF EXISTS appointment CASCADE;
 CREATE TABLE appointment(
-  id SERIAL primary key,
+  id SERIAL PRIMARY KEY,
   fullname varchar(100),
   app_date date,
   specializationid varchar(100),

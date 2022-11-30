@@ -163,6 +163,7 @@
                 <th>Doctor Specilization</th>
                 <th>Doctor Name</th>
                 <th>Contacts</th>
+                <th>Update</th>
             </tr>
             {% for result in appdata %}
             <tr>
@@ -171,11 +172,12 @@
                 <td>{{result.specializationid}}</td>
                 <td>{{result.empname}}</td>
                 <td>{{result.contact}}</td>
+                <td><a href="DeleteAppointment/{{result.id}}" onclick="return confirm('Are you sure that you want to delete it?')" class="btn btn-danger">Delete</a></td>
             </tr>
-            
-            {% endfor %}
 
+            {% endfor %}
         </table>
+        
     </div>
 
     <div class="pagination">
