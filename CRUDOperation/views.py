@@ -5,7 +5,7 @@ from CRUDOperation.forms import Empforms, PatientForms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.paginator import Paginator
-
+from CRUDOperation.models import EmpModel
 
 def editpatient(request,id):
     editempobj = Patient.objects.get(id=id)
@@ -127,9 +127,14 @@ def doctortable(request, id):
     showdoctors = EmpModel.objects.all().filter(id=id)
     return render(request,'doctortable.html',{"data":showdoctors})
 
+
+
 def showspecialization(request):
+    results = EmpModel.objects.all   
     showdoctors = SpecType.objects.all()
-    return render(request, 'showspecialization.html',{"data":showdoctors})
+    return render(request, 'showspecialization.html',{"data":showdoctors, "showdocs":results})
+
+
 
 def searchbar(request):
     if request.method == 'GET':
