@@ -32,17 +32,28 @@
                 <td>Date chedule</td>
                 <td><input type="date" placeholder="Appointment date" name="app_date"></td>
             </tr>
+
+            <tr>
+                <td>Start time</td>
+                <td><input type="time" name="app_start" value = "{{timeslot.starttime}}" readonly></td>
+            </tr>
+
+            <tr>
+                <td>End time</td>
+                <td><input type="time" name="app_end" min="09:00" max="18:00" value = "{{timeslot.endtime}}" readonly></td>
+            </tr>
+
             <tr>
                 <td>Specialization ID</td>
                 
                  
-                <td><input type="text" placeholder="Specialization" name="specializationid"></td>
+                <td><input type="text" placeholder="Contact" name="contact" value = "{{doctor.id}}" readonly></td>
         
             </tr>
             <tr>
                 <td>Full name of the doctor</td>
                   
-                <td><input type="text" placeholder="Doctor name" name="empname"></td>
+                <td><input type="text" placeholder="Contact" name="contact" value = "{{doctor.empname}}" readonly></td>
 
             </tr>
             <tr>
@@ -50,8 +61,9 @@
                     
                 <td><input type="text" placeholder="Contact" name="contact"></td>
             </tr>
+            
             <tr>
-                <td><input type="submit" name="INSERT" value="Update Record" class="btn btn-success"/>
+                <td><input type="submit" name="INSERT" value="New Appointment" class="btn btn-success"/>
                 <td> {% if messages %}
                     {% for mess in messages %}
                     <b style ="color:green">{{mess}}</b>
@@ -60,7 +72,7 @@
             </tr>
         </table>
 
-        <a href = "{% url 'showspecialization' %}" class="btn btn-info" id="appbk">Back</a>
+        <a href = "{% url 'showspecialization' %}" class="btn btn-info" id="appbk">Back to table</a>
        
     </form>
 </div>
