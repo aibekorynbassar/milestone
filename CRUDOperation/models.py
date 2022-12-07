@@ -63,6 +63,7 @@ class Appointment(models.Model):
     contact = models.CharField(max_length=100)
     app_start = models.TimeField()
     app_end = models.TimeField()
+    procedure = models.CharField(max_length=100)
     
     class Meta:
         db_table = "appointment"
@@ -74,4 +75,11 @@ class TimeSlots(models.Model):
 
     class Meta:
         db_table = "timeslots"
+
+class Procedures(models.Model):
+    procid = models.CharField(max_length=100)
+    typeofprocedure = models.CharField(max_length=100)
+
+    class Meta:
+        db_table = "procedures"
 

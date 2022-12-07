@@ -154,12 +154,13 @@ def makeappointment(request, id2, id):
     doctor = EmpModel.objects.get(id = id2)
     specid = doctor.specializationid
     name = doctor.empname
+    procedures = Procedures.objects.filter(procid=specid).values()
     timeslot = TimeSlots.objects.get(id = id)
     date_time = timeslot.timedate
     start_time = timeslot.starttime
     end_time = timeslot.endtime
     if request.method == "POST":
-        if request.POST.get('fullname') and request.POST.get('contact'):
+        if request.POST.get('fullname') and request.POST.get('contact') and request.POST.get('procedure'):
             saverecord = Appointment()
             saverecord.fullname = request.POST.get('fullname')
             saverecord.app_date = date_time
@@ -167,13 +168,14 @@ def makeappointment(request, id2, id):
             saverecord.app_end = end_time
             saverecord.specializationid = specid
             saverecord.empname = name
+            saverecord.procedure = request.POST.get('procedure')
             saverecord.contact = request.POST.get('contact')
             saverecord.save()
             timeslot.delete()
             messages.success(request, "Appointment for name " + saverecord.fullname + " has been added successfully")
-            return render(request,'appointment.html', {"doctor" : doctor, "timeslot" : timeslot})
+            return render(request,'appointment.html', {"doctor" : doctor, "timeslot" : timeslot, "procedures" : procedures})
     else:
-        return render(request,'appointment.html', {"doctor" : doctor, "timeslot" : timeslot})
+        return render(request,'appointment.html', {"doctor" : doctor, "timeslot" : timeslot, "procedures" : procedures})
 
 def doctortableSpec(request,id):
     showdoctors = EmpModel.objects.all().filter(specializationid=id)

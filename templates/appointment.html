@@ -55,6 +55,18 @@
 
             </tr>
             <tr>
+                <td>Select procedure</td>
+                  
+                <td>
+                    <select name="procedure" id = "procedure">
+                    {% for procedure in procedures %}
+                    <option> {{procedure.typeofprocedure}} </option>
+                    {% endfor %}
+                </select>
+                </td>
+
+            </tr>
+            <tr>
                 <td>Contact of the patient</td>
                     
                 <td><input type="text" placeholder="Contact" name="contact"></td>
