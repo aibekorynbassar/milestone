@@ -18,19 +18,17 @@
                 <div class="tables">
         <form method = "POST">
             {% csrf_token %}
-        <table border="1" class="table table-striped table-bordered">
+        <table border="1" class="table table-striped table-bordered showsp">
            
             <tr>
                 <td>Full name of the patient</td>
-                
-                    
                 <td><input type="text" placeholder="Enter name" name="fullname"></td>
             
             </tr>
            
             <tr>
-                <td>Date chedule</td>
-                <td><input type="date" placeholder="Appointment date" name="app_date"></td>
+                <td>Date schedule</td>
+                <td><input type="date" name="appointment_date" value = "{{timeslot.timedate}}" readonly></td>
             </tr>
 
             <tr>
