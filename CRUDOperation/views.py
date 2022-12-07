@@ -147,7 +147,7 @@ def searchbar(request):
         post1 = EmpModel.objects.all().filter(specializationid__icontains = search)
         if(post1):
             return render(request, 'searchbar.html', {"post1": post1})
-        post2 = EmpModel.objects.all().filter(category__icontains = search)
+        post2 = SpecType.objects.all().filter(specialization__icontains = search)
         return render(request, 'searchbar.html', {"post2": post2})
 
 def makeappointment(request, id2, id):

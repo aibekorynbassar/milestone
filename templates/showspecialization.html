@@ -21,6 +21,9 @@
                 <option value="{{result.empname}}">
                 <option value="{{result.specializationid}}">
             {% endfor %}
+            {% for result in data %}
+                <option value="{{result.specialization}}">
+            {% endfor %}
         </datalist>  
       </form>
       <h1>SPECIALIZATION TABLE</h1>

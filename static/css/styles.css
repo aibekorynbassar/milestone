@@ -217,11 +217,12 @@ header{
   margin-top: 50px;
   margin-left: 25%;
 }
-/* #temp{
-  table-layout: fixed;
+#sps{
+  max-width: fit-content;
+  text-align: center;
+  height: fit-content;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-td { 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  word-wrap: break-word;
-} */
