@@ -46,17 +46,17 @@ def showemp(request):
     showallpatients = Patient.objects.all()
     showallappointments = Appointment.objects.all()
 
-    paginator = Paginator(showall, 2)
+    paginator = Paginator(showall, 4)
 
     page_number = request.GET.get('page')
     data = paginator.get_page(page_number)
 
-    paginator1 = Paginator(showallpatients, 2)
+    paginator1 = Paginator(showallpatients, 4)
 
     page_number1 = request.GET.get('page1')
     patdata = paginator1.get_page(page_number1)
 
-    paginator2 = Paginator(showallappointments, 3)
+    paginator2 = Paginator(showallappointments, 4)
 
     page_number2 = request.GET.get('page2')
     appdata = paginator2.get_page(page_number2)
@@ -136,7 +136,8 @@ def timetable(request, id):
 def showspecialization(request):
     results = EmpModel.objects.all   
     showdoctors = SpecType.objects.all()
-    return render(request, 'showspecialization.html',{"data":showdoctors, "showdocs":results})
+    proced = Procedures.objects.all()
+    return render(request, 'showspecialization.html',{"data":showdoctors, "showdocs":results, "procedure": proced})
 
 def searchbar(request):
     if request.method == 'GET':
@@ -144,7 +145,7 @@ def searchbar(request):
         post = EmpModel.objects.all().filter(empname__icontains = search)
         if(post):
             return render(request, 'searchbar.html', {"post": post})
-        post1 = EmpModel.objects.all().filter(specializationid__icontains = search)
+        post1 = Procedures.objects.all().filter(typeofprocedure__icontains = search)
         if(post1):
             return render(request, 'searchbar.html', {"post1": post1})
         post2 = SpecType.objects.all().filter(specialization__icontains = search)
@@ -177,6 +178,4 @@ def makeappointment(request, id2, id):
     else:
         return render(request,'appointment.html', {"doctor" : doctor, "timeslot" : timeslot, "procedures" : procedures})
 
-def doctortableSpec(request,id):
-    showdoctors = EmpModel.objects.all().filter(specializationid=id)
-    return render(request, 'doctortableSpec.html',{"data":showdoctors})    
+ 

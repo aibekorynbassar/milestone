@@ -42,17 +42,16 @@
 			address VARCHAR(100),
 			FOREIGN KEY(specializationid) REFERENCES specializationtype(specializationid) ON UPDATE CASCADE ON DELETE CASCADE
 	);
-	INSERT INTO employee VALUES(DEFAULT, 'adlet', '2002-12-21', '021221550621', '100', 'depid', '1', 'category', '500', 'photo', '09:00:00', '18:00:00', '200', 'bachelor', '10', 'address');
-	INSERT INTO employee VALUES(DEFAULT, 'aibek', '2001-10-31', '654321123456', '200', 'depid1', '1', 'category2', '5002', 'photo2', '09:00:00', '18:00:00', '300', 'master', '10', 'address2');
-	INSERT INTO employee VALUES(DEFAULT, 'arslan', '2000-10-10', '123123123123', '300', 'depid2', '2', 'category', '500', 'photo3', '09:00:00', '18:00:00', '400', 'phd', '10', 'address3');
-	INSERT INTO employee VALUES(DEFAULT, 'zhibek', '2002-10-10', '321321321321', '400', 'depid3', '2', 'category2', '5002', 'photo4', '09:00:00', '18:00:00', '700', 'bachelor', '10', 'address4');
-	INSERT INTO employee VALUES(DEFAULT, 'zhiger', '2000-12-12', '666666666666', '500', 'depid1', '3', 'category', '500', 'photo5', '09:00:00', '18:00:00', '500', 'master', '10', 'address5');
-	INSERT INTO employee VALUES(DEFAULT, 'saul', '1999-06-08', '777777777777', '600', 'depid2', '3', 'category2', '5002', 'photo6', '09:00:00', '18:00:00', '300', 'phd', '10', 'address6');
-	INSERT INTO employee VALUES(DEFAULT, 'pasha', '1996-10-03', '531412315555', '700', 'depid3', '3', 'category', '5002', 'photo7', '09:00:00', '18:00:00', '200', 'bachelor', '10', 'address7');
-	INSERT INTO employee VALUES(DEFAULT, 'mikhail', '1970-03-10', '754754754754', '800', 'depid1', '4', 'category2', '5002', 'photo8', '09:00:00', '18:00:00', '200', 'master', '10', 'address8');
-	INSERT INTO employee VALUES(DEFAULT, 'askar', '1960-10-10', '123232532525', '900', 'depid2', '5', 'category', '5002', 'photo9', '09:00:00', '18:00:00', '100', 'phd', '10', 'address9');
-	INSERT INTO employee VALUES(DEFAULT, 'ben', '1950-01-01', '345345456123', '1000', 'depid3', '6', 'category2', '5002', 'photo10', '09:00:00', '18:00:00', '100', 'phd', '10', 'address10');
-
+	INSERT INTO employee VALUES(DEFAULT, 'adlet', '2002-12-21', '021221550621', '100', 'medicine', '1', 'category', '500', 'photo', '09:00:00', '18:00:00', '200', 'bachelor', '10', 'address');
+INSERT INTO employee VALUES(DEFAULT, 'aibek', '2001-10-31', '654321123456', '200', 'medicine', '1', 'category2', '5002', 'photo2', '09:00:00', '18:00:00', '300', 'master', '10', 'address2');
+INSERT INTO employee VALUES(DEFAULT, 'arslan', '2000-10-10', '123123123123', '300', 'surgery', '2', 'category', '500', 'photo3', '09:00:00', '18:00:00', '400', 'phd', '10', 'address3');
+INSERT INTO employee VALUES(DEFAULT, 'zhibek', '2002-10-10', '321321321321', '400', 'surgery', '2', 'category2', '5002', 'photo4', '09:00:00', '18:00:00', '700', 'bachelor', '10', 'address4');
+INSERT INTO employee VALUES(DEFAULT, 'zhiger', '2000-12-12', '666666666666', '500', 'obstetrics', '3', 'category', '500', 'photo5', '09:00:00', '18:00:00', '500', 'master', '10', 'address5');
+INSERT INTO employee VALUES(DEFAULT, 'saul', '1999-06-08', '777777777777', '600', 'radiology', '3', 'category2', '5002', 'photo6', '09:00:00', '18:00:00', '300', 'phd', '10', 'address6');
+INSERT INTO employee VALUES(DEFAULT, 'pasha', '1996-10-03', '531412315555', '700', 'dental', '3', 'category', '5002', 'photo7', '09:00:00', '18:00:00', '200', 'bachelor', '10', 'address7');
+INSERT INTO employee VALUES(DEFAULT, 'mikhail', '1970-03-10', '754754754754', '800', 'orthopedics', '4', 'category2', '5002', 'photo8', '09:00:00', '18:00:00', '200', 'master', '10', 'address8');
+INSERT INTO employee VALUES(DEFAULT, 'askar', '1960-10-10', '123232532525', '900', 'medicine', '5', 'category', '5002', 'photo9', '09:00:00', '18:00:00', '100', 'phd', '10', 'address9');
+INSERT INTO employee VALUES(DEFAULT, 'ben', '1950-01-01', '345345456123', '1000', 'surgery', '6', 'category2', '5002', 'photo10', '09:00:00', '18:00:00', '100', 'phd', '10', 'address10');
 	DROP TABLE IF EXISTS patient CASCADE;
 
 	CREATE TABLE patient (

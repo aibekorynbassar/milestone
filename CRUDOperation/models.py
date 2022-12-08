@@ -80,6 +80,9 @@ class Procedures(models.Model):
     procid = models.CharField(max_length=100)
     typeofprocedure = models.CharField(max_length=100)
 
+    def __str__(self):
+        return self.typeofprocedure  
+
     class Meta:
         db_table = "procedures"
 
